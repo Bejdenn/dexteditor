@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import com.elinis.core.commons.util.FileUtils;
 import com.elinis.core.frontend.view.AbstractViewModel;
+import com.elinis.core.frontend.view.component.messagebox.MessageBox;
+import com.elinis.core.frontend.view.component.messagebox.MessageButtonType;
+import com.elinis.core.frontend.view.component.messagebox.MessageType;
 import com.elinis.core.frontend.view.interaction.ViewModelAction;
 
 import org.springframework.stereotype.Component;
@@ -80,7 +83,8 @@ public class EditorViewModel extends AbstractViewModel {
     }
 
     private void printFile() {
-        System.out.println("Print");
+        MessageBox.show(this, MessageType.CONFIRMATION, "TestAlert", "message",
+                MessageButtonType.OK);
     }
 
     private void toggleDarkMode() {
